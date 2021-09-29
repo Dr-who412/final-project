@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgation"
+    app:startDestination="@id/listOfRestaurant">
+    <fragment
+        android:id="@+id/listOfRestaurant"
+        android:name="com.example.umum.listOfRestaurant"
+        android:label="fragment_list_of_restaurant"
+        tools:layout="@layout/fragment_list_of_restaurant" >
+        <action
+            android:id="@+id/action_listOfRestaurant_to_productOfrest"
+            app:destination="@id/productOfrest" />
+        <action
+            android:id="@+id/action_listOfRestaurant_to_maps"
+            app:destination="@id/maps" />
+    </fragment>
+    <fragment
+        android:id="@+id/productOfrest"
+        android:name="com.example.umum.productOfrest"
+        android:label="fragment_product_ofrest"
+        tools:layout="@layout/fragment_product_ofrest" >
+        <action
+            android:id="@+id/action_productOfrest_to_maps"
+            app:destination="@id/maps" />
+        <argument
+            android:name="idofrest"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/maps"
+        android:name="com.example.umum.Maps"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+</navigation>
