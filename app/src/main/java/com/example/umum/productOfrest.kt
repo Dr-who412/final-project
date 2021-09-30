@@ -38,10 +38,10 @@ class productOfrest : Fragment() {
     lateinit var adapter: CustomAdapterProduct
     lateinit var nav: Navigation
     var myViewModel : MyViewModel = MyViewModel()
-
+     var idofProd=0
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val id= arguments?.getString("id")
+         idofProd= arguments?.getString("id").toString().toInt()
         val name= arguments?.getString("name")
         val address=arguments?.getString("address")
         val image=arguments?.getString("image")
@@ -97,7 +97,7 @@ class productOfrest : Fragment() {
         myViewModel.getData()
         myViewModel.getRestaurantList().observe(viewLifecycleOwner, Observer {
 
-            var product=it[id].products
+            var product=it[idofProd-1].products
             adapter = CustomAdapterProduct(product,view)
             recyclerView.layoutManager  = GridLayoutManager(view.context,2)
             recyclerView.adapter = adapter

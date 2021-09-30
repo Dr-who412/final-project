@@ -94,8 +94,8 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
     fun takeArg(){
         restaurantName = arguments?.getString("restaurantName").toString()
-        restaurantLocationLongitude = arguments?.getString("restaurantLocationLongitude").toString().toDouble()
-        restaurantLocationLatitude = arguments?.getString("restaurantLocationLatitude").toString().toDouble()
+        restaurantLocationLongitude = arguments?.getString("lat").toString().toDouble()
+        restaurantLocationLatitude = arguments?.getString("long").toString().toDouble()
 
     }
 

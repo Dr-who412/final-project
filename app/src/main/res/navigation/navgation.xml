@@ -21,16 +21,29 @@
         android:name="com.example.umum.productOfrest"
         android:label="fragment_product_ofrest"
         tools:layout="@layout/fragment_product_ofrest" >
-        <action
-            android:id="@+id/action_productOfrest_to_maps"
-            app:destination="@id/maps" />
         <argument
             android:name="idofrest"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_productOfrest_to_listOfRestaurant"
+            app:destination="@id/listOfRestaurant" />
     </fragment>
     <fragment
         android:id="@+id/maps"
         android:name="com.example.umum.Maps"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" />
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_maps_to_listOfRestaurant"
+            app:destination="@id/listOfRestaurant" />
+        <argument
+            android:name="restaurantName"
+            app:argType="string" />
+        <argument
+            android:name="lat"
+            app:argType="string" />
+        <argument
+            android:name="long"
+            app:argType="string" />
+    </fragment>
 </navigation>

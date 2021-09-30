@@ -39,7 +39,7 @@ class CustomAdapter(var data:ArrayList<RestaurantListData>, var restFragment: Vi
              Navigation.findNavController(restFragment).navigate(action)
         }
         holder.directionbutton.setOnClickListener {
-            var action =listOfRestaurantDirections.actionListOfRestaurantToMaps()
+            var action =listOfRestaurantDirections.actionListOfRestaurantToMaps(list.name,list.restaurant_lat,list.restaurant_long)
             Navigation.findNavController(restFragment).navigate(action)
         }
     }
