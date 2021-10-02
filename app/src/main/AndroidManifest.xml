@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Umum">
         <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:name=".MainActivity2"
             android:exported="true" />
         <activity
